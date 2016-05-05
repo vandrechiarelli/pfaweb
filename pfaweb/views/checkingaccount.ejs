@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html ng-app="checkingAccountApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <title>Checking Account UI</title>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        #checkingaccount-list {
+            margin-bottom: 30px;
+        }
+    </style>
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="./controllers/checkingaccount.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Checking Account UI <span class="label label-info">{{ checkingaccounts.length }}</span></h1>
+        </div>
+        <div id="checkingaccount-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-repeat="checkingaccount in checkingAccountList">
+                    <label>
+                        <input type="checkbox" ng-click="deleteCheckingAccount(checkingaccount._id)"> {{ checkingaccount.CheckingAccountID }}
+                        &nbsp | &nbsp
+                        <label>{{ checkingaccount.CheckingAccountDate }}</label>
+                        &nbsp | &nbsp
+                        <label>{{ checkingaccount.CheckingAccountValue }}</label>
+                        &nbsp | &nbsp
+                        <label>{{ checkingaccount.CheckingAccountComment }}</label>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div id="checkingaccount-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="checking account list" ng-model="formData.text">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createCheckingAccount()">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

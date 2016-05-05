@@ -1,0 +1,19 @@
+{
+  "name": "pfaweb",
+  "version": "0.0.0",
+  "description": "Personal Finance Application",
+  "main": "server.js",
+  "author": "Vandre Chiarelli",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.14",
+    "morgan": "^1.7.0"
+  }
+}
