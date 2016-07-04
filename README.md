@@ -1,1 +1,1 @@
-# pfaweb - Personal Financial Application
+# pfaweb - Personal Finance Application
